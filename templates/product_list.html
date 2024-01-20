@@ -1,0 +1,45 @@
+{%load static%}
+{%load my_tags%}
+
+<div class="small-container">
+    <div class="row row-2">
+        <h2>All Products</h2>
+        <select>
+            <option>Default Sort</option>
+            <option>Sort By Price</option>
+            <option>Sort By Popularity</option>
+            <option>Sort By Rating</option>
+            <option>Sort By Sale</option>
+        </select>
+    </div>
+    {%for chunk in products|chunks:4%}
+    <div class="row">
+        {%for item in chunk%}
+        <div class="col-4">
+            <a href="{%url 'detail_product' item.id%}"><img src="{{item.image.url}}"></a>
+            <h4>{{item.title}}</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>{{item.price}}</p>
+        </div>
+        {%endfor%}
+    </div>
+    {%endfor%}
+
+    <div class="page-btn">
+        {%if products.has_previous%}
+        <a href="?page={{products.previous_page_number}}"><span>←</span></a>
+        {%endif%}
+        {%for i in products.paginator.page_range%}
+        <a href="?page={{i}}"><span data-value="{{i}}">{{i}}</span></a>
+        {%endfor%}
+        {%if products.has_next%}
+        <a href="?page={{products.next_page_number}}"><span>→</span></a> 
+        {%endif%}
+    </div>
+</div>

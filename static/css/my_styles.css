@@ -1,0 +1,51 @@
+/* message_container for showing messages*/
+
+.message_container{
+    opacity:0;
+    transition:opacity 0.5s;
+    top:80px;
+    width:80%;
+    padding: 5px 0 5px 0;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.error_message{
+    
+   
+    color:red;
+    background-color: rgb(237, 189, 189);
+}
+
+
+
+.success_message{
+
+    color:green;
+    background-color:rgb(181, 231, 181);
+}
+
+
+.success{
+    color:green;
+    background-color:rgb(181, 231, 181);   
+    padding: 0.5em;
+    border-radius: 0.5rem;
+    border: 2px solid green;
+}
+
+.error{
+    
+    color:red;
+    background-color: rgb(237, 189, 189);
+    padding: 0.5em;
+    border-radius: 0.5rem;
+    border: 2px solid green;
+}
+
+.cart_empty_message{
+    color:rgb(182, 182, 182)
+}

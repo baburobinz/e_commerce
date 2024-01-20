@@ -1,0 +1,20 @@
+{%extends 'blank.html'%}
+{%block content%}
+{%include 'product_list.html'%}
+{%endblock content%}
+
+{%block extra_scripts%}
+<script>
+    var span = document.querySelectorAll('span')
+    var curr_page = "{{request.GET.page}}"
+
+    span.forEach((item)=>{
+
+        if(item.getAttribute('data-value')==curr_page){
+            item.style.background="#ff523b"
+        }
+    })
+</script>
+   
+{%endblock%}
+l
