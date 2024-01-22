@@ -17,7 +17,7 @@ def show_cart(request):
     }
     return render(request,'cart.html',context)
 
-@login_required
+@login_required(login_url='account')
 def add_cart_item(request):
     if request.POST:
         user = request.user
@@ -73,6 +73,11 @@ def confirm_order(request):
     return redirect('cart')
         
        
-
-
+@login_required(login_url='account')
+def show_orders(request):
+    user = request.user
+    customer = user.customer_profile
+    all_orders = Order.objects.filter(owner=customer).exclude(order_status=Order.CART_STAGE)
+    context = {'orders':all_orders}
+    return render(request,'orders.html',context)
 

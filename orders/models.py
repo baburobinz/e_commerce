@@ -14,6 +14,7 @@ class Order(models.Model):
     ORDER_DELIVERED = 3
     ORDER_REJECTED = 4
     STAUS_CHOICE = (
+        (ORDER_CONFIRMED,"Order Confirmed"),
         (ORDER_PROCESSED,"Order Processed"),
         (ORDER_DELIVERED,"Order delivered"),
         (ORDER_REJECTED,"Order Rejected")

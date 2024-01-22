@@ -49,3 +49,22 @@
 .cart_empty_message{
     color:rgb(182, 182, 182)
 }
+
+
+/* Order status */
+
+.Confirmed{
+    color:rgb(0, 170, 255)
+}
+
+.Processed{
+    color:orange
+}
+
+.Delivered{
+    color:green
+}
+
+.Rejected{
+    color:red
+}
